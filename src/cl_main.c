@@ -8148,7 +8148,7 @@ void CL_ParseGamestateLegacy( msg_t *msg ) {
 					Com_Error( ERR_DROP, "CL_ParseGamestate(): No configstrings" );
 				}
 
-				if ( numcs < 0 || numcs >= MAX_CONFIGSTRINGS ) {
+				if ( numcs < 0 || numcs > MAX_CONFIGSTRINGS ) {
 					Com_Error( ERR_DROP, "configstring > MAX_CONFIGSTRINGS" );
 				}
 
@@ -8326,8 +8326,8 @@ void CL_ParseGamestateX( msg_t *msg ) {
 					Com_Error( ERR_DROP, "CL_ParseGamestate(): No configstrings" );
 				}
 
-				if ( numcs < 0 || numcs >= 2*MAX_CONFIGSTRINGS ) {
-					Com_Error( ERR_DROP, "configstringcount(%d) >= 2*MAX_CONFIGSTRINGS(%d)", numcs, MAX_CONFIGSTRINGS);
+				if ( numcs < 0 || numcs > 2*MAX_CONFIGSTRINGS ) {
+					Com_Error( ERR_DROP, "configstringcount(%d) > 2*MAX_CONFIGSTRINGS(%d)", numcs, MAX_CONFIGSTRINGS);
 				}
 
 				confIndex = -1;
