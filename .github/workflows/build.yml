@@ -27,10 +27,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install nasm:i386
 
+    - name: Start SSH agent and add private key
+      uses: webfactory/ssh-agent@v0.9.1
+      with:
+        ssh-private-key: ${{ secrets.CLIENT_AUTH_DEPLOY_KEY }}
+
     - name: CMake Configure
       run: |
-        eval `ssh-agent -s`
-        ssh-add - <<< '${{ secrets.CLIENT_AUTH_DEPLOY_KEY }}'
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=i686-w64-mingw32-gcc -DCMAKE_CXX_COMPILER=i686-w64-mingw32-g++ -DOFFICIAL_BUILD=ON
 
     - name: Build
