@@ -22,6 +22,7 @@ add_library(cod4x SHARED
     src/gfxcmds.c
     src/developer_utils.c
     src/cg_weapons.c
+    src/cg_view.c
     src/files.c
     src/cl_rank.c
     src/com_stringtable.c

@@ -14,6 +14,8 @@
 #include <time.h>
 #include <ctype.h>
 
+#include "cg_view.h"
+
 int entrypoint();
 
 void WriteSymbol(DWORD addr, void* symbol)
@@ -1158,6 +1160,8 @@ void Patch_Other(){
     // Unfinished work from afe7c8f9fc7db2c714b15e7ab412d6e63183eda9
     //SetCall(0x452A70, CG_CalcViewValues);
     //SetCall(0x451E22, CG_CalcViewValues);
+
+	SetJump(0x0044FB20, CG_OffsetThirdPersonView);
 
 }
 

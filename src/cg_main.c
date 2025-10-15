@@ -18,6 +18,8 @@
 
 cvar_t* debug_show_viewpos;
 cvar_t* cg_zoom_sensitivity_ratio;
+cvar_t* cg_thirdPersonFreeLook;
+cvar_t* cg_thirdPersonFreeLookCS;
 //float CG_DrawViewAngles(ScreenPlacement *scrPlace, float y);
 
 void __cdecl CG_DrawUpperRightDebugInfo()
@@ -1119,6 +1121,8 @@ void CG_RegisterUserCvars()
 {
   debug_show_viewpos = Cvar_RegisterBool("debug_show_viewpos", 0, 0, "Draw current player view position");
   cg_zoom_sensitivity_ratio = Cvar_RegisterFloat("zoom_sensitivity_ratio", 1.0, 0.0, 10.0, CVAR_ARCHIVE, "Scales the sensitivity when in ADS mode. Defaults to 1.0. A value of 0.0 does disable zoom sensitivity completely.");
+  cg_thirdPersonFreeLook = Cvar_RegisterBool("cg_thirdPersonFreeLook", qfalse, CVAR_ARCHIVE, "Enable third-person free-look orbit in spectator mode.");
+  cg_thirdPersonFreeLookCS = Cvar_RegisterBool("cg_thirdPersonFreeLookCS", qfalse, CVAR_ARCHIVE, "Third-person freelook: lock camera base (CS-style) instead of following the spectated player.");
 }
 
 void __cdecl CG_GameMessage(int localClientNum, const char *msg)

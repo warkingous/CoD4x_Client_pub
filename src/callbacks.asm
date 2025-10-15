@@ -380,7 +380,7 @@ bin_import CG_ApplyViewAnimation, 0x450890
 bin_import CG_CalcTurretViewValues, 0x4507B0
 bin_import CG_ShakeCamera, 0x423D00
 bin_import CG_VisionSetApplyToRefdef, 0x4538D0
-bin_import CG_OffsetThirdPersonView, 0x44FB20
+;bin_import CG_OffsetThirdPersonView, 0x44FB20
 
 ;SECTION .text
 ;global MSG_WriteEntityIndex
